@@ -1,0 +1,88 @@
+CREATING AND PRINTING A BST
+
+
+PROBLEM:
+      Inserting a node in BST and printing it.
+
+
+CODE:
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.left=None
+        self.right=None
+    def insert(self,x):
+        if self.data==None:
+            self.data=x
+            return
+        if self.data>x:
+            if self.left==None:
+                self.left=Node(x)
+            else:
+                self.left.insert(x)
+        else:
+            if self.right==None:
+                self.right=Node(x)
+            else:
+                self.right.insert(x)
+    def show(self):
+        if self.left:
+            self.left.show()
+        print(self.data,end=" ")
+        if self.right:
+            self.right.show()
+x=int(input("enter a element"))
+r=Node(x)
+while True:
+    print("\n1.insert \n2.show \n3.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        x=int(input("enter an element"))
+        r.insert(x)
+    elif ch==2:
+        r.show()
+    elif ch==3:
+        break
+    else:
+        print("invalid")
+
+
+
+INPUT:
+14
+1
+56
+1
+687
+1
+1
+2
+
+
+
+OUTPUT:
+enter a element14
+
+1.insert 
+2.show 
+3.exit
+enter your choice1
+enter an element56
+
+1.insert 
+2.show 
+3.exit
+enter your choice1
+enter an element687
+
+1.insert 
+2.show 
+3.exit
+enter your choice1
+enter an element1
+
+1.insert 
+2.show 
+3.exit
+enter your choice2
+1 14 56 687 
