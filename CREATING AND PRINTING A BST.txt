@@ -1,10 +1,6 @@
-CREATING AND PRINTING A BST
-
-
-PROBLEM:
-      Inserting a node in BST and printing it.
-
-
+BST
+PPROBLEM:
+        Creating a bst,inserting and searching a node
 CODE:
 class Node:
     def __init__(self,x):
@@ -31,10 +27,24 @@ class Node:
         print(self.data,end=" ")
         if self.right:
             self.right.show()
+    def search(self,sno):
+        if self.data==sno:
+            print("element is found")
+            return
+        if self.data>x:
+            if self.left!=None:
+                self.left.search(x)
+            else:
+                print("element not found")
+        else:
+            if self.right!=None:
+                self.right.search(x)
+            else:
+                print("element not found")
 x=int(input("enter a element"))
 r=Node(x)
 while True:
-    print("\n1.insert \n2.show \n3.exit")
+    print("\n1.insert \n2.show \n3.exit \n 4.search")
     ch=int(input("enter your choice"))
     if ch==1:
         x=int(input("enter an element"))
@@ -43,43 +53,70 @@ while True:
         r.show()
     elif ch==3:
         break
+    elif ch==4:
+        x=int(input("enter search element"))
+        r.search(x)
     else:
         print("invalid")
 
-
-
 INPUT:
-14
 1
-56
+34
 1
-687
+87
 1
+76
 1
+45
 2
-
+4
+45
 
 
 OUTPUT:
-enter a element14
+enter a element56
 
 1.insert 
 2.show 
-3.exit
+3.exit 
+ 4.search
 enter your choice1
-enter an element56
+enter an element34
 
 1.insert 
 2.show 
-3.exit
+3.exit 
+ 4.search
 enter your choice1
-enter an element687
+enter an element87
 
 1.insert 
 2.show 
-3.exit
+3.exit 
+ 4.search
 enter your choice1
-enter an element1
+enter an element76
+
+1.insert 
+2.show 
+3.exit 
+ 4.search
+enter your choice1
+enter an element45
+
+1.insert 
+2.show 
+3.exit 
+ 4.search
+enter your choice2
+34 45 56 76 87 
+1.insert 
+2.show 
+3.exit 
+ 4.search
+enter your choice4
+enter search element45
+element is found
 
 1.insert 
 2.show 
