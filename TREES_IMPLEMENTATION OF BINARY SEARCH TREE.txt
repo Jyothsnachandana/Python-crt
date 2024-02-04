@@ -1,0 +1,55 @@
+TREES_IMPLEMENTATION OF BINARY SEARCH TREE
+
+PROGRAM:
+Write a program to implement binary search tree.
+
+CODE:
+class node:
+    def __init__(self,v):
+        self.data=v
+        self.left=None
+        self.right=None
+    def insert(self,v):
+        if self.data==None:
+            self.data=v
+            return
+        if self.data>v:
+            if self.left==None:
+                self.left=node(v)
+            else:
+                self.left.insert(v)
+        else:
+            if self.right==None:
+                self.right=node(v)
+            else:
+                self.right.insert(v)        
+    def show(self):
+        if self.left:
+            self.left.show()
+        print(self.data,end=" ")
+        if self.right:
+            self.right.show()
+v=int(input())
+n=node(v)
+while True:
+    v=int(input())
+    if v<0:
+        break
+    n.insert(v)
+n.show()
+
+INPUT:
+6
+3
+2
+1
+4
+7
+8
+9
+10
+-1
+
+
+OUTPUT:
+1 2 3 4 6 7 8 9 10
