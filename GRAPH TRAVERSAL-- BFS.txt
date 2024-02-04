@@ -1,0 +1,28 @@
+GRAPH TRAVERSAL-- BFS
+
+CODE:
+def bfs(visit,graph,node):
+    visit.append(node)
+    queue.append(node)
+    while queue:
+        m=queue.pop()
+        print(m,end=" ")
+        for v in graph[m]:
+            if v not in visit:
+                visit.append(v)
+                queue.append(v)
+graph={
+        '5':['3','7'],
+        '3':['2','4'],
+        '7':['8'],
+        '2':[],
+        '4':['8'],
+        '8':[]
+}
+visit=[]
+queue=[]
+bfs(visit,graph,'5')
+
+
+OUTPUT:
+5 7 8 3 4 2 
