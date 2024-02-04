@@ -1,0 +1,23 @@
+GRAPH TRAVERSAL-- DFS
+
+CODE:
+def dfs(visit,graph,node):
+    if node not in visit:
+        print(node,end=" ")
+        visit.add(node)
+        for v in graph[node]:
+            dfs(visit,graph,v)
+graph={
+        '5':['3','7'],
+        '3':['2','4'],
+        '7':['8'],
+        '2':[],
+        '4':['8'],
+        '8':[]
+}
+visit=set()
+dfs(visit,graph,'5')
+
+
+OUTPUT:
+5 3 2 4 8 7 
